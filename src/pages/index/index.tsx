@@ -66,8 +66,10 @@ export default class  extends Component<PropsWithChildren> {
   render () {
     return (
       <View className='index'>
-        <Popup  />
-        <Button  className='add_btn' onClick={this.props.add}>+</Button>
+        <Popup onSubmit={async (data) => {
+          await alert(data)
+        }} />
+        <Button className='add_btn' onClick={this.props.add}>+</Button>
         <Button className='dec_btn' onClick={this.props.dec}>-</Button>
         <Button className='dec_btn' onClick={this.props.asyncAdd}>async</Button>
         <View><Text>{this.props.counter.num}</Text></View>
